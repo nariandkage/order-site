@@ -5,13 +5,11 @@ assets/CartReconciliationBanner-BMgB8KR4.css
 assets/CartReconciliationBanner-PJdRS_C5.js
 assets/CatalogPage-CoMO5Czx.css
 assets/CatalogPage-DIYe05Md.js
-assets/ClosedNotice-DZFc05E-.js
-assets/ClosedNotice-DyQOcXEh.css
 assets/ConfirmSwitchModal-BHh6obBW.js
 assets/ConfirmSwitchModal-BkZ_ED2O.css
 assets/ContactPage-BPkXjh0N.css
 assets/ContactPage-zwosb9E6.js
-assets/DetailsForm-7Lt3SM0V.js
+assets/DetailsForm-B9t4DDkU.js
 assets/DetailsForm-p9whqoCZ.css
 assets/ErrorBanner-BzkpIoPG.js
 assets/ErrorBanner-dm-gfUUT.css
@@ -49,7 +47,7 @@ assets/cartHelpers-CQP46vMw.js
 assets/chunk-BV7QT456-u4forM4P.js
 assets/firebase-CxwjquvK.js
 assets/formatOrder-UIBxcCK-.js
-assets/index-CdDjhznZ.js
+assets/index-1WsZw6aL.js
 assets/index-CiMRsl0u.css
 assets/istTime-C4oTBhHH.js
 assets/jsx-runtime-DAs1UGHr.js
@@ -59,6 +57,8 @@ assets/phoneHelpers-DjHKJKbo.js
 assets/platterSizes-DJKQlx05.js
 assets/react-BnRWbv_O.js
 assets/react-dom-DMFVqbGW.js
+assets/useBlocked-Cvk-yn_o.js
+assets/useBlocked-DyQOcXEh.css
 assets/useOrderTypeGuard-D7xokLxo.css
 assets/useOrderTypeGuard-DAP2WPEB.js
 assets/useProducts-Bt1AvBi3.js
