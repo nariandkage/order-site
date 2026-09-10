@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- No maximum-scale: locking zoom fails WCAG 2.1 SC 1.4.4 and takes
+         pinch-zoom away from exactly the low-vision customers who need it.
+         iOS focus-zoom, the usual reason people add it, is prevented
+         properly in global.css by giving inputs a 16px font on touch
+         devices instead. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nari & Kāge · Order</title>
+
+    <!-- Favicons (bump ?v= when icon files change to bust caches) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png?v=10" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png?v=10" />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.webmanifest?v=10" />
+    <meta name="theme-color" content="#C63F28" />
+
+    <!-- iOS: install to home screen as standalone app -->
+    <link rel="apple-touch-icon" href="/icons/icon-180.png?v=10" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180.png?v=10" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png?v=10" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512.png?v=10" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Nari & Kāge" />
+
+    <!-- Android: install to home screen -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Nari & Kāge" />
+
+    <!-- Preload the texture so the bridge splash paints fully on PWA launch. -->
+    <link rel="preload" as="image" href="/bg-texture.jpg" media="(display-mode: standalone)" />
+
+    <!-- Google Fonts, three families for the 2b type system:
+         - DM Mono (body labels, descriptions, provenance, tags)
+         - Bricolage Grotesque (drawer nav primary links, per brief)
+         - Hanken Grotesk (base UI sans, longer running text)
+         Preconnect first for faster handshake, then swap-load so text
+         paints in a fallback while fonts arrive. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Weight 300 is requested because the CSS asks for it: every form
+         field is font-weight 300 (global.css), plus ten other rules. It was
+         missing from this list, so the browser faked a light weight from 400
+         in all eleven places.
+
+         Loaded without blocking render. media="print" makes the browser
+         fetch the sheet at low priority and not hold first paint for it;
+         onload flips it to all once it arrives. The preload above starts the
+         fetch immediately so the swap happens sooner, and the noscript copy
+         covers JavaScript being off. display=swap already meant text painted
+         in a fallback, but the stylesheet itself still blocked the first
+         paint of everything else. -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Bricolage+Grotesque:wght@400;500;600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Bricolage+Grotesque:wght@400;500;600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'; this.onload=null;"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Bricolage+Grotesque:wght@400;500;600&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <style>
+      /* Bridge splash for installed PWAs: covers the gap between the OS
+         native launch screen and React mounting (which renders its own
+         <SplashScreen> with the rotating brand mark). Uses the SAME
+         cream + paper texture as the React splash so the two read as
+         one continuous splash, previously this was a red screen with a
+         different image, which flashed visibly before the React layer
+         covered it. */
+      #app-splash {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background-color: #F5EFE3;
+        background-image: url('/bg-texture.jpg');
+        background-blend-mode: multiply;
+        background-repeat: repeat;
+        background-size: 512px 512px;
+        opacity: 1;
+        transition: opacity 0.4s ease-out;
+      }
+      @media (display-mode: standalone) {
+        #app-splash { display: block; }
+      }
+      #app-splash.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-CdDjhznZ.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-DAs1UGHr.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-BnRWbv_O.js">
+    <link rel="modulepreload" crossorigin href="/assets/chunk-BV7QT456-u4forM4P.js">
+    <link rel="modulepreload" crossorigin href="/assets/firebase-CxwjquvK.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-dom-DMFVqbGW.js">
+    <link rel="modulepreload" crossorigin href="/assets/ProductImage-BCDC16Uh.js">
+    <link rel="modulepreload" crossorigin href="/assets/ClosedNotice-DZFc05E-.js">
+    <link rel="modulepreload" crossorigin href="/assets/ConfirmSwitchModal-BHh6obBW.js">
+    <link rel="modulepreload" crossorigin href="/assets/istTime-C4oTBhHH.js">
+    <link rel="modulepreload" crossorigin href="/assets/OrderFlow-hwyui262.js">
+    <link rel="modulepreload" crossorigin href="/assets/AuthContext-Cn5uNwW3.js">
+    <link rel="modulepreload" crossorigin href="/assets/cartHelpers-CQP46vMw.js">
+    <link rel="modulepreload" crossorigin href="/assets/useProducts-Bt1AvBi3.js">
+    <link rel="modulepreload" crossorigin href="/assets/formatOrder-UIBxcCK-.js">
+    <link rel="modulepreload" crossorigin href="/assets/useSettings-DXdHWBJq.js">
+    <link rel="modulepreload" crossorigin href="/assets/addressHelpers-Cq_dYZxJ.js">
+    <link rel="modulepreload" crossorigin href="/assets/phoneHelpers-DjHKJKbo.js">
+    <link rel="modulepreload" crossorigin href="/assets/whatsapp-Bns77Uis.js">
+    <link rel="stylesheet" crossorigin href="/assets/ProductImage-BoG-qIES.css">
+    <link rel="stylesheet" crossorigin href="/assets/ClosedNotice-DyQOcXEh.css">
+    <link rel="stylesheet" crossorigin href="/assets/ConfirmSwitchModal-BkZ_ED2O.css">
+    <link rel="stylesheet" crossorigin href="/assets/OrderFlow-DlUO9lo9.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-CiMRsl0u.css">
+  <script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <div id="app-splash" aria-hidden="true"></div>
+    <div id="root"></div>
+  </body>
+</html>

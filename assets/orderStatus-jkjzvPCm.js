@@ -1,0 +1,1 @@
+var e={new:`New`,confirmed:`Confirmed`,preparing:`Preparing`,ready:`Ready`,delivered:`Delivered`,picked_up:`Picked Up`,cancelled:`Cancelled`},t={order:`Cheese Order`,platter:`Platter`,giftbox:`Gift Box`,special:`Special`};export{t as n,e as t};

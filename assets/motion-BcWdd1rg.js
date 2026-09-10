@@ -1,0 +1,1 @@
+function e(){return typeof window>`u`||typeof window.matchMedia!=`function`?!1:window.matchMedia(`(prefers-reduced-motion: reduce)`).matches}function t(t,n={}){!t||typeof t.scrollIntoView!=`function`||t.scrollIntoView({...n,behavior:e()?`auto`:n.behavior||`auto`})}function n(t){return e()?0:t}export{t as n,n as t};
